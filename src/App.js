@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import PropTypes from "prop-types";
 import styles from "./App.module.css";
 import Button from "./Button";
+import Todo from "./Todo";
+import Crypto from "./Crypto";
 
 function App() {
   const [counter, setcounter] = useState(0);
@@ -36,6 +38,12 @@ function App() {
       <div className={styles.container}>
         <h3>{counter}</h3>
         <Button onclick={addCount} text={"Add Count"} />
+      </div>
+      <div className={styles.container}>
+        <Todo />
+      </div>
+      <div className={styles.container}>
+        <Crypto />
       </div>
     </div>
   );
