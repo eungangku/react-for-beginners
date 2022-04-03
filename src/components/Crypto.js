@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import styles from "./Crypto.module.css";
 
 function Crypto() {
   const [loading, setLoading] = useState(true);
@@ -31,7 +32,7 @@ function Crypto() {
         <p>Loading...</p>
       ) : (
         <div>
-          <select onChange={onSelect}>
+          <select onChange={onSelect} className={styles.select}>
             {coins.map((coin, index) => (
               <option key={coin.id} value={index}>
                 {coin.name} ({coin.symbol}) ${coin.quotes.USD.price}

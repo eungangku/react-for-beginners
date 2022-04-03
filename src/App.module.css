@@ -5,11 +5,15 @@
   background: #ececec;
   margin: 30px 20px 30px 20px;
 }
+.title a {
+  text-decoration: none;
+  color: black;
+}
 
 .container {
   margin: 15px 20px 15px 20px;
   background-color: #ececec;
-  padding: 10px 25px;
+  padding: 25px 25px;
   border-radius: 15px;
 }
 

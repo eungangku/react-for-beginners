@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import PropTypes from "prop-types";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import ScrollToTop from "./ScrollToTop";
 import styles from "./App.module.css";
-import Button from "./Button";
-import Todo from "./Todo";
-import Crypto from "./Crypto";
+import Button from "./components/Button";
+import Todo from "./components/Todo";
+import Crypto from "./components/Crypto";
+import Movie from "./routes/MovieList";
+import Detail from "./routes/MovieDetail";
 
 function App() {
   const [counter, setcounter] = useState(0);
@@ -30,18 +34,37 @@ function App() {
 
   return (
     <div>
-      <h1 className={styles.title}>EGK Tools</h1>
+      <h1 className={styles.title}>
+        <a href="/">EGK Tools</a>
+      </h1>
+      <div className={styles.container}>
+        <Router>
+          <Switch>
+            <Route path="/detail/:id">
+              <ScrollToTop />
+              <Detail />
+            </Route>
+            <Route path="/">
+              <Movie />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+
       <div className={styles.container}>
         <h3>{keyword}</h3>
         <input onChange={searchKeyword} className={styles.input} placeholder="Search"></input>
       </div>
+
       <div className={styles.container}>
         <h3>{counter}</h3>
         <Button onclick={addCount} text={"Add Count"} />
       </div>
+
       <div className={styles.container}>
         <Todo />
       </div>
+
       <div className={styles.container}>
         <Crypto />
       </div>
