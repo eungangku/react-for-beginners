@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import PropTypes from "prop-types";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
 import styles from "./App.module.css";
 import Button from "./components/Button";
@@ -45,7 +45,7 @@ function App() {
               <ScrollToTop />
               <Detail />
             </Route>
-            <Route path="/random-art">
+            <Route path="/randomart">
               <ScrollToTop />
               <RandomArt />
             </Route>
