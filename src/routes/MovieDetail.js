@@ -11,7 +11,10 @@ function Detail() {
   useEffect(() => {
     fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
       .then((res) => res.json())
-      .then((json) => setJson(json.data.movie));
+      .then((json) => {
+        setJson(json.data.movie);
+        console.log(json.data.movie);
+      });
     setLoading(false);
   }, []);
 
@@ -19,7 +22,7 @@ function Detail() {
     setImgloading(false);
   };
   return (
-    <div>
+    <div className={styles.container}>
       {loading ? (
         <h1>Loading..</h1>
       ) : (

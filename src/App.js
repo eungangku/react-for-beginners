@@ -9,6 +9,7 @@ import Todo from "./components/Todo";
 import Crypto from "./components/Crypto";
 import Movie from "./routes/MovieList";
 import Detail from "./routes/MovieDetail";
+import RandomArt from "./routes/RandomArt";
 
 function App() {
   const [counter, setcounter] = useState(0);
@@ -37,12 +38,16 @@ function App() {
       <h1 className={styles.title}>
         <a href="/">EGK Tools</a>
       </h1>
-      <div className={styles.container}>
+      <div>
         <Router>
           <Switch>
             <Route path="/detail/:id">
               <ScrollToTop />
               <Detail />
+            </Route>
+            <Route path="/random-art">
+              <ScrollToTop />
+              <RandomArt />
             </Route>
             <Route path="/">
               <Movie />

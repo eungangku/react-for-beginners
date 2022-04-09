@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import styles from "./MovieList.module.css";
 
 function Movie() {
   const [loading, setLoading] = useState(true);
@@ -12,7 +13,7 @@ function Movie() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
       <ul>
         {loading ? (
           <li>Loading...</li>

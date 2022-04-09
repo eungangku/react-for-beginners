@@ -1,14 +1,16 @@
+.container {
+  margin: 15px 20px 15px 20px;
+  padding: 25px 25px;
+  border-radius: 15px;
+  background-color: #ececec;
+}
+
 .mediaContainer {
   display: flex;
   position: relative;
-}
-
-.mediaContainer img {
-  border-radius: 35px 0 0 35px;
-}
-
-.mediaContainer iframe {
-  border-radius: 0 35px 35px 0;
+  height: 750px;
+  border-radius: 35px;
+  overflow: hidden;
 }
 
 .overlayShadow {
