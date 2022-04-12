@@ -36,7 +36,7 @@ function App() {
   return (
     <div>
       <h1 className={styles.title}>
-        <a href="/">EGK Tools</a>
+        <a href="/react-for-beginners">EGK Tools</a>
       </h1>
       <div>
         <Router>
