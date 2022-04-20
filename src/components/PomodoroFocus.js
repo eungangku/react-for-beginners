@@ -52,7 +52,7 @@ function PomodoroFocus({ type, time }) {
                 {prettyMilliseconds(countdown, { colonNotation: true })}
               </Typography>
             </Box>
-            <LinearProgress color={type === "rest" ? "success" : null} variant="determinate" value={Math.round((countdown / (1000 * time)) * 100)} />
+            <LinearProgress color={type === "rest" ? "success" : "primary"} variant="determinate" value={Math.round((countdown / (1000 * time)) * 100)} />
             <CardActions>
               <a href={focusUrl} style={{ textDecoration: "none" }} onClick={reload}>
                 <Button variant={type === "focus" ? "contained" : "text"} color="primary">
