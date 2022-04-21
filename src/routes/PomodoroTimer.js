@@ -30,11 +30,19 @@ function PomodoroFocus({ type, time }) {
 
   useEffect(() => (document.title = `${prettyMilliseconds(countdown, { colonNotation: true })} - ${type}`), [countdown]);
 
-  function reload() {
+  function switchToFocus() {
     if (type === "focus") {
-      window.location.href = restUrl;
+      return;
     } else {
       window.location.href = focusUrl;
+    }
+    window.location.reload();
+  }
+  function switchToRest() {
+    if (type === "rest") {
+      return;
+    } else {
+      window.location.href = restUrl;
     }
     window.location.reload();
   }
@@ -61,16 +69,12 @@ function PomodoroFocus({ type, time }) {
             </Box>
             <LinearProgress color={type === "rest" ? "success" : "primary"} variant="determinate" value={Math.round((countdown / (1000 * time)) * 100)} />
             <CardActions>
-              <a href={focusUrl} style={{ textDecoration: "none" }} onClick={reload}>
-                <Button variant={type === "focus" ? "contained" : "text"} color="primary">
-                  Focus
-                </Button>
-              </a>
-              <a href={restUrl} style={{ textDecoration: "none" }} onClick={reload}>
-                <Button variant={type === "focus" ? "text" : "contained"} color="success">
-                  Rest
-                </Button>
-              </a>
+              <Button variant={type === "focus" ? "contained" : "text"} color="primary" onClick={switchToFocus}>
+                Focus
+              </Button>
+              <Button variant={type === "focus" ? "text" : "contained"} color="success" onClick={switchToRest}>
+                Rest
+              </Button>
             </CardActions>
           </Card>
           <Card variant="outlined" sx={{ margin: "15px 0" }}>
