@@ -1,18 +1,22 @@
 import { useState, useEffect } from "react";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ScrollToTop from "./ScrollToTop";
 import styles from "./App.module.css";
 import Movie from "./routes/MovieList";
 import Detail from "./routes/MovieDetail";
 import RandomArt from "./routes/RandomArt";
-import PomodoroFocus from "./components/PomodoroFocus";
+import PomodoroFocus from "./routes/PomodoroTimer";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 function Home() {
-  return <h1>home</h1>;
+  return (
+    <Link to="/pomodoro">
+      <h1>pomodoro</h1>
+    </Link>
+  );
 }
 
 function App() {

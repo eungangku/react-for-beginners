@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import DateNow from "../components/DateNow";
 import { useCountdownTimer } from "use-countdown-timer";
 import prettyMilliseconds from "pretty-ms";
-import { Container, Typography, Box, LinearProgress, Card, Button, CardActions } from "@mui/material";
+import { Container, Typography, Box, LinearProgress, Card, Button, CardActions, Stack } from "@mui/material";
 
 function PomodoroFocus({ type, time }) {
   const focusUrl = "https://eungangku.github.io/react-for-beginners/#/pomodoro";
@@ -41,9 +42,14 @@ function PomodoroFocus({ type, time }) {
   return (
     <Container maxWidth="sm">
       <Box sx={{ padding: "20px 0" }}>
-        <Typography variant="h4" gutterBottom={true} sx={{ fontWeight: "bold" }}>
-          Pomodoro Timer
-        </Typography>
+        <Stack direction="row" justifyContent="space-between" alignItems="center" spacing={0}>
+          <Typography variant="h4" gutterBottom={true} sx={{ fontWeight: "bold" }}>
+            Pomodoro Timer
+          </Typography>
+          <Typography variant="caption" gutterBottom={true} sx={{}}>
+            <DateNow format="hh:mm A" />
+          </Typography>
+        </Stack>
       </Box>
       <Box sx={{}}>
         <Box sx={{}}>
