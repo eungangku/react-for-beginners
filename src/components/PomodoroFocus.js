@@ -23,6 +23,7 @@ function PomodoroFocus({ type, time }) {
       } else {
         window.location.href = focusUrl;
       }
+      window.location.reload();
     },
   });
 
